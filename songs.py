@@ -115,7 +115,7 @@ def load_data():
                 new_album = None
 
             if new_album is None:
-                new_album = Album(album_field, year_field,new_artist)
+                new_album = Album(album_field, year_field, new_artist)
             elif new_album.name != album_field:
                 # We have just read the new album for the current artist
                 # store the current album in the artist's collection the create a new album object
@@ -131,14 +131,26 @@ def load_data():
         # We have to process it.
         if new_artist is not None:
             if new_album is not None:
-                new_artist.add_album(new_artist)
+                new_artist.add_album(new_album)
             artist_list.append(new_artist)
     return artist_list
+
+
+def create_checkfile(artist_list):
+    """Create a check file from the object data  for comparison with the original file"""
+    with open("checkfile.txt", 'w') as checkfile:
+        for new_artist in artist_list:
+            for new_album in new_artist.albums:
+                for new_song in new_album.tracks:
+                    print("{0.name}\t{1.name}\t{1.year}\t{2.title}".format(new_artist, new_album, new_song),
+                          file=checkfile)
 
 
 if __name__ == '__main__':
     artists = load_data()
     print("There are {} artists".format(len(artists)))
+
+    create_checkfile(artists)
 
 
 
