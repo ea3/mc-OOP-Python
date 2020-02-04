@@ -57,7 +57,7 @@ class Album:
             in the track list.. Inserting it between other song if necessary.
             Otherwise, the song will be added to the end of the list. """
 
-        if position in None:
+        if position is None:
             self.tracks.append(song)
         else:
             self.tracks.insert(position, song)
@@ -102,11 +102,43 @@ def load_data():
             # data row should consist of (artist, album, year, song)
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
             year_field = int(year_field)
-            print(artist_field, album_field, year_field, song_field)
+            print("{};{}:{}:{}".format(artist_field, album_field, year_field, song_field))
+
+            if new_artist is None:
+                new_artist = Artist(artist_field)
+            elif new_artist.name != artist_field:
+                # we have just read details for a new artist
+                # store the current album in the current artists collection the create a new artist object
+                new_artist.add_album(new_album)
+                artist_list.append(new_artist)
+                new_artist = Artist(artist_field)
+                new_album = None
+
+            if new_album is None:
+                new_album = Album(album_field, year_field,new_artist)
+            elif new_album.name != album_field:
+                # We have just read the new album for the current artist
+                # store the current album in the artist's collection the create a new album object
+
+                new_artist.add_album(new_album)
+                new_album = Album(album_field, year_field, new_artist)
+
+            # create a new song object and add it to the current album's collection
+            new_song = Song(song_field, new_artist)
+            new_album.add_song(new_song)
+
+        # After reading the last line of the text file, we have an artist and album that have not been stored.
+        # We have to process it.
+        if new_artist is not None:
+            if new_album is not None:
+                new_artist.add_album(new_artist)
+            artist_list.append(new_artist)
+    return artist_list
 
 
 if __name__ == '__main__':
-    load_data()
+    artists = load_data()
+    print("There are {} artists".format(len(artists)))
 
 
 
