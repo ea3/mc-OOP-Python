@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="71f5fabd-2c43-4a5a-8559-b26ab168d44b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/oop.py" beforeDir="false" afterPath="$PROJECT_DIR$/oop.py" afterDir="false" />
-    </list>
+    <list default="true" id="71f5fabd-2c43-4a5a-8559-b26ab168d44b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +21,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1XKGRQ3gTZ2HCEdhT4e3AOnABXs" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="flattenPackages" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -97,5 +96,9 @@
       <screen x="49" y="23" width="1631" height="1027" />
     </state>
     <state width="749" height="271" key="GridCell.Tab.0.right/49.23.1631.1027@49.23.1631.1027" timestamp="1580791323511" />
+    <state x="966" y="374" width="670" height="676" key="search.everywhere.popup" timestamp="1580791788549">
+      <screen x="49" y="23" width="1631" height="1027" />
+    </state>
+    <state x="966" y="374" width="670" height="676" key="search.everywhere.popup/49.23.1631.1027@49.23.1631.1027" timestamp="1580791788549" />
   </component>
 </project>
