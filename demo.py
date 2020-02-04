@@ -9,3 +9,6 @@ print(b_string)
 
 backlash_string = "This is a backlash \\followed by text"
 print(backlash_string)
+
+error_string = r" this string ends with \\"    # Won't work if it's not a raw string.
+print(error_string)
