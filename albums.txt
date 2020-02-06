@@ -11,6 +11,18 @@
 1000 Maniacs	Our Time in Eden	1992	Stockton Gala Days
 1000 Maniacs	Our Time in Eden	1992	These Are Days
 1000 Maniacs	Our Time in Eden	1992	Tolerance
+ZZ Top	Antenna	1994	Pincushion
+ZZ Top	Antenna	1994	Breakaway
+ZZ Top	Antenna	1994	World Of Swirl
+ZZ Top	Antenna	1994	Fuzzbox Voodoo
+ZZ Top	Antenna	1994	Girl In A T-Shirt
+ZZ Top	Antenna	1994	Antenna Head
+ZZ Top	Antenna	1994	PCH
+ZZ Top	Antenna	1994	Cherry Red
+ZZ Top	Antenna	1994	Cover Your Rig
+ZZ Top	Antenna	1994	Lizard Life
+ZZ Top	Antenna	1994	Deal Goin' Down
+ZZ Top	Antenna	1994	Everything
 10cc	The Best Of The Early Years	2002	Rubber Bullets
 10cc	The Best Of The Early Years	2002	The Wall Street Shuffle
 10cc	The Best Of The Early Years	2002	Waterfall
@@ -654,18 +666,6 @@ ZZ Top	Recycler	1990	Give It Up
 ZZ Top	Recycler	1990	2000 Blues
 ZZ Top	Recycler	1990	Burger Man
 ZZ Top	Recycler	1990	Doubleback
-ZZ Top	Antenna	1994	Pincushion
-ZZ Top	Antenna	1994	Breakaway
-ZZ Top	Antenna	1994	World Of Swirl
-ZZ Top	Antenna	1994	Fuzzbox Voodoo
-ZZ Top	Antenna	1994	Girl In A T-Shirt
-ZZ Top	Antenna	1994	Antenna Head
-ZZ Top	Antenna	1994	PCH
-ZZ Top	Antenna	1994	Cherry Red
-ZZ Top	Antenna	1994	Cover Your Rig
-ZZ Top	Antenna	1994	Lizard Life
-ZZ Top	Antenna	1994	Deal Goin' Down
-ZZ Top	Antenna	1994	Everything
 ZZ Top	Mescalero	2003	Mescalero
 ZZ Top	Mescalero	2003	Two Ways To Play
 ZZ Top	Mescalero	2003	Alley-gator
