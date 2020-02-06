@@ -3,7 +3,7 @@ class Song:
 
     Attributes:
     title (str): The title of the song
-    artist(Artist): An artist object representing the song creator.
+    artist(str): The name of the songs creator
     duration (int): The duration of the song in seconds. May be zero
     """
     def __init__(self, title, artist, duration=0):
@@ -19,6 +19,10 @@ class Song:
         self.artist = artist
         self.duration = duration
 
+    def get_title(self):
+        return self.title
+
+    name = property(get_title)
 
 # help(Song.__init__)
 # print(Song.__doc__)
@@ -30,7 +34,7 @@ class Album:
     Attributes:
         name (str): The name of the album
         year(int): THe year when the album was released
-        artist: The artist responsible for the album.
+        artist(str): The name of the  artist responsible for the album.
         If not specified, the artist will default to an artist name
         "Various artists"
         tracks (List[Song]): A list of the songs of the album.
@@ -43,7 +47,7 @@ class Album:
         self.name = name
         self.year = year
         if artist is None:
-            self.artist = Artist("Various Artists")
+            self.artist = "Various Artists"
         else:
             self.artist = artist
         self.tracks = []
@@ -52,15 +56,17 @@ class Album:
         """Adds song to the track list
 
         Args:
-            song(Song) = A song to add
+            song(Song) = The title of a song to add.
             position(Optional[int]): If specified, the song will be added to that position
             in the track list.. Inserting it between other song if necessary.
             Otherwise, the song will be added to the end of the list. """
-
-        if position is None:
-            self.tracks.append(song)
-        else:
-            self.tracks.insert(position, song)
+        song_found = find_object(song, self.tracks)
+        if song_found is None:
+            song_found = Song(song, self.artist)
+            if position is None:
+                self.tracks.append(song_found)
+            else:
+                self.tracks.insert(position, song_found)
 
 
 class Artist:
@@ -92,7 +98,24 @@ class Artist:
         self.albums.append(album)
 
     def add_song(self, name, year, title):
-        """Add a new song to the collection of albums"""
+        """Add a new song to the collection of albums
+        This method will add the song to an album in the collection.
+        A new album will be created in the collection if it does not already exist.
+
+        Args:
+            name(str): The name of the Album
+            year(int): The year the album was produced
+            title (str): The title of th song
+        """
+        album_found = find_object(name, self.albums)
+        if album_found is None:
+            print(name + " not found")
+            album_found = Album(name, year, self.name)
+            self.add_album(album_found)
+        else:
+            print("Found album " + name)
+
+        album_found.add_song(title)
 
 
 def find_object(field, object_list):
@@ -114,7 +137,7 @@ def load_data():
             # data row should consist of (artist, album, year, song)
             artist_field, album_field, year_field, song_field = tuple(line.strip('\n').split('\t'))
             year_field = int(year_field)
-            print("{};{}:{}:{}".format(artist_field, album_field, year_field, song_field))
+            print("{}: {}: {}: {}".format(artist_field, album_field, year_field, song_field))
 
             new_artist = find_object(artist_field, artist_list)
             if new_artist is None:
